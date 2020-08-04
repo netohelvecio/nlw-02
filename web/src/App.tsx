@@ -4,11 +4,13 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/global';
 import theme from './styles/theme';
 
+import Landing from './pages/Landing';
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <h1>coe rapaziada</h1>
+      <Landing />
     </ThemeProvider>
   );
 }

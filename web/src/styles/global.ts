@@ -23,18 +23,12 @@ export default createGlobalStyle`
     background: ${props => props.theme.colors.backgroundColor};
   }
 
-  #root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   body {
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button, textarea {
-    font: 500 1.6rem ${props => props.theme.font.poppins}
+    font: 500 1.6rem ${props => props.theme.font.poppins};
   }
 
   a {
@@ -47,11 +41,6 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-  }
-
-  .container {
-    width: 90vw;
-    max-width: 700px;
   }
 
   @media (min-width: 700px) {
