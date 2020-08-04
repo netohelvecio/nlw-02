@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import landing from '../../assets/images/landing.svg';
 
@@ -21,15 +22,15 @@ const Landing: React.FC = () => {
         <img src={landing} className="hero-image" alt="Plataforma de estudos" />
 
         <ButtonContainer>
-          <a href="" className="study">
+          <NavLink to="/study" className="study">
             <img src={study} alt="Estudar" />
             Estudar
-          </a>
+          </NavLink>
 
-          <a href="" className="give-classes">
+          <NavLink to="/give-classes" className="give-classes">
             <img src={giveClasses} alt="Dar aulas" />
             Dar aulas
-          </a>
+          </NavLink>
         </ButtonContainer>
 
         <span>
