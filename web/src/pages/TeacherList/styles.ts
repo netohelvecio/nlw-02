@@ -63,3 +63,14 @@ export const FieldContainer = styled.div`
     }
   }
 `;
+
+export const Main = styled.main`
+  margin: 3.2rem auto;
+  width: 90%;
+
+  @media (min-width: 700px) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3.2rem 0;
+  }
+`;

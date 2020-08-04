@@ -34,7 +34,7 @@ export const Container = styled.header`
     height: 350px;
 
     > div {
-      /* max-width: 800px; */
+      max-width: 800px;
     }
   }
 `;

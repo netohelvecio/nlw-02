@@ -2,7 +2,8 @@ import React from 'react';
 
 import Header from '../../Components/Header';
 
-import { Container, Form, FieldContainer } from './styles';
+import { Container, Form, FieldContainer, Main } from './styles';
+import TeacherCard from '../../Components/TeacherCard';
 
 const TeacherList: React.FC = () => {
   return (
@@ -25,6 +26,10 @@ const TeacherList: React.FC = () => {
           </FieldContainer>
         </Form>
       </Header>
+
+      <Main>
+        <TeacherCard />
+      </Main>
     </Container>
   );
 };
