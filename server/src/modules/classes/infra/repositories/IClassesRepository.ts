@@ -3,4 +3,5 @@ import Class from '../entities/Class';
 
 export default interface IClassesRepository {
   create(data: ICreateClassDTO): Promise<Class>;
+  findById(id: string): Promise<Class | undefined>;
 }

@@ -22,6 +22,12 @@ class ClassesRepository implements IClassesRepository {
 
     return createdClass;
   }
+
+  public async findById(id: string): Promise<Class | undefined> {
+    const findClass = await this.ormRepository.findOne(id);
+
+    return findClass;
+  }
 }
 
 export default ClassesRepository;

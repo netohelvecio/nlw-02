@@ -6,7 +6,7 @@ import routes from 'routes';
 import { errors } from 'celebrate';
 
 import './database/index';
-import './utils/containers';
+import './containers';
 
 import AppError from 'utils/errors/AppError';
 

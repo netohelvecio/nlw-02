@@ -16,15 +16,15 @@ export default class CreateClassSchedule1596760795250
           },
           {
             name: 'week_day',
-            type: 'varchar',
+            type: 'int',
           },
           {
             name: 'from',
-            type: 'varchar',
+            type: 'int',
           },
           {
             name: 'to',
-            type: 'varchar',
+            type: 'int',
           },
           {
             name: 'class_id',
@@ -44,7 +44,7 @@ export default class CreateClassSchedule1596760795250
         foreignKeys: [
           {
             name: 'SchedulesClass',
-            referencedTableName: 'users',
+            referencedTableName: 'classes',
             referencedColumnNames: ['id'],
             columnNames: ['class_id'],
             onDelete: 'CASCADE',
@@ -56,6 +56,6 @@ export default class CreateClassSchedule1596760795250
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('class_schedule');
+    await queryRunner.dropTable('class_schedules');
   }
 }

@@ -16,13 +16,13 @@ class ClassSchedule {
   id: string;
 
   @Column()
-  week_day: string;
+  week_day: number;
 
   @Column()
-  from: string;
+  from: number;
 
   @Column()
-  to: string;
+  to: number;
 
   @Column('uuid')
   class_id: string;
