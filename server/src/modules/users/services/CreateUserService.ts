@@ -1,6 +1,5 @@
 import { injectable, inject } from 'tsyringe';
 
-import AppError from 'utils/errors/AppError';
 import IUsersRepository from '../infra/repositories/IUsersRepository';
 import User from '../infra/entities/User';
 
@@ -18,8 +17,6 @@ class CreateUserService {
   ) {}
 
   public async execute({ name, bio, whatsapp }: IRequest): Promise<User> {
-    throw new AppError('teste');
-
     const createdUser = await this.usersRepository.create({
       name,
       bio,
