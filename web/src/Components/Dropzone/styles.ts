@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 24rem;
-  width: 24rem;
+  height: 20rem;
+  width: 20rem;
   border-radius: 50%;
   background: ${props => props.theme.colors.secondaryColor};
+  border: 4px solid ${props => props.theme.colors.primaryColor};
 
   display: flex;
   justify-content: center;
@@ -14,22 +15,21 @@ export const Container = styled.div`
   cursor: pointer;
 
   img {
-    height: 24rem;
-    width: 24rem;
+    height: 20rem;
+    width: 20rem;
     border-radius: 50%;
     object-fit: cover;
   }
 
   p {
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    font: 600 1.4rem ${props => props.theme.font.archivo};
+    font: 600 1.3rem ${props => props.theme.font.archivo};
     text-align: justify;
     color: ${props => props.theme.colors.white};
   }

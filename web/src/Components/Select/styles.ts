@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import MaskedInput from 'react-text-mask';
 
 export const FieldContainer = styled.div`
   position: relative;
@@ -30,7 +29,7 @@ export const FieldContainer = styled.div`
     font-size: 1.4rem;
   }
 
-  input {
+  select {
     width: 100%;
     height: 5.6rem;
     margin-top: 0.8rem;
@@ -39,6 +38,7 @@ export const FieldContainer = styled.div`
     border: 1px solid ${props => props.theme.colors.lineWhite};
     padding: 0 1.6rem;
     font: 1.6rem ${props => props.theme.font.archivo};
+    outline: 0;
   }
 
   @media (min-width: 700px) {
@@ -46,15 +46,4 @@ export const FieldContainer = styled.div`
       margin-top: 0;
     }
   }
-`;
-
-export const InputMaskStyled = styled(MaskedInput)`
-  width: 100%;
-  height: 5.6rem;
-  margin-top: 0.8rem;
-  border-radius: 0.8rem;
-  background: ${props => props.theme.colors.inputBackgroundColor};
-  border: 1px solid ${props => props.theme.colors.lineWhite};
-  padding: 0 1.6rem;
-  font: 1.6rem ${props => props.theme.font.archivo};
 `;

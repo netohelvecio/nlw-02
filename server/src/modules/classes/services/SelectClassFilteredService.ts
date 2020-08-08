@@ -1,6 +1,5 @@
 import { injectable, inject } from 'tsyringe';
 
-import IClassesRepository from '../infra/repositories/IClassesRepository';
 import IClassSchedulesRepository from '../infra/repositories/IClassSchedulesRepository';
 import ClassSchedule from '../infra/entities/ClassSchedule';
 

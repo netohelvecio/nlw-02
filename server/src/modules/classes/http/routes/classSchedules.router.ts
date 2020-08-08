@@ -14,7 +14,7 @@ classSchedulesRouter.post(
       schedule: Joi.array()
         .items(
           Joi.object({
-            week_day: Joi.number().min(0).max(7).required(),
+            week_day: Joi.number().min(0).max(6).required(),
             from: Joi.string().required(),
             to: Joi.string().required(),
           }),

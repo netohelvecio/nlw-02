@@ -1,13 +1,24 @@
 import React, { InputHTMLAttributes } from 'react';
+import { MaskedInputProps } from 'react-text-mask';
+import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
-import { FieldContainer } from './styles';
+import { defaultMaskOptions } from '../../utils/helpers';
 
-interface IProps extends InputHTMLAttributes<HTMLInputElement> {
+import { FieldContainer, InputMaskStyled } from './styles';
+
+type IInputMask = InputHTMLAttributes<HTMLInputElement> & MaskedInputProps;
+
+interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   id: string;
 }
 
-const Input: React.FC<IProps> = ({ label, id, ...props }) => {
+interface IInputMaskProps extends IInputMask {
+  label: string;
+  id: string;
+}
+
+export const Input: React.FC<IInputProps> = ({ label, id, ...props }) => {
   return (
     <FieldContainer>
       <label htmlFor={id}>{label}</label>
@@ -16,4 +27,32 @@ const Input: React.FC<IProps> = ({ label, id, ...props }) => {
   );
 };
 
-export default Input;
+export const InputMask: React.FC<IInputMaskProps> = ({
+  label,
+  id,
+  ...props
+}) => {
+  return (
+    <FieldContainer>
+      <label htmlFor={id}>{label}</label>
+      <InputMaskStyled id={id} {...props} />
+    </FieldContainer>
+  );
+};
+
+export const CurrencyInput: React.FC<IInputMaskProps> = ({
+  label,
+  id,
+  ...props
+}) => {
+  const currencyMask = createNumberMask({
+    ...defaultMaskOptions,
+  });
+
+  return (
+    <FieldContainer>
+      <label htmlFor={id}>{label}</label>
+      <InputMaskStyled id={id} mask={currencyMask} {...props} />
+    </FieldContainer>
+  );
+};
