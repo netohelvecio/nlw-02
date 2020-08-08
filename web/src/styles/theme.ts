@@ -16,6 +16,7 @@ export default {
     lineWhite: '#E6E6F0',
     inputBackgroundColor: '#F8F8FC',
     boxFooter: '#FAFAFC',
+    error: '#f71735',
   },
 
   font: {

@@ -19,6 +19,7 @@ declare module 'styled-components' {
       lineWhite: string;
       inputBackgroundColor: string;
       boxFooter: string;
+      error: string;
     };
 
     font: {

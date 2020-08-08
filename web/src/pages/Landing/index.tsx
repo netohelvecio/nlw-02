@@ -1,6 +1,10 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { NavLink } from 'react-router-dom';
+
+import api from '../../services/api';
+import { ITotalConnections } from '../../utils/types';
+
 import logo from '../../assets/images/logo.svg';
 import landing from '../../assets/images/landing.svg';
 
@@ -11,6 +15,21 @@ import purpleHearth from '../../assets/images/icons/purple-heart.svg';
 import { Container, Content, LogoContainer, ButtonContainer } from './styles';
 
 const Landing: React.FC = () => {
+  const [connectionsTotal, setConnectionsTotal] = useState(0);
+
+  useEffect(() => {
+    api
+      .get<ITotalConnections>('connections')
+      .then(response => setConnectionsTotal(response.data.total))
+      .catch(err => {
+        console.log(err.message);
+
+        toast.error(
+          err.message || 'Erro ao fazer contagem do total de conexões',
+        );
+      });
+  }, []);
+
   return (
     <Container>
       <Content>
@@ -34,7 +53,7 @@ const Landing: React.FC = () => {
         </ButtonContainer>
 
         <span>
-          Total de 200 conexões já realizadas
+          Total de {connectionsTotal} conexões já realizadas
           <img src={purpleHearth} alt="Coração roxo" />
         </span>
       </Content>

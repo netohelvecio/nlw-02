@@ -38,6 +38,7 @@
     "jsx-a11y/label-has-associated-control": "off",
     "react/prop-types": "off",
     "camelcase": "off",
+    "react/jsx-one-expression-per-line": "off",
     "react/no-array-index-key": "off",
     "react/jsx-curly-newline": "off",
     "react/jsx-props-no-spreading": "off",

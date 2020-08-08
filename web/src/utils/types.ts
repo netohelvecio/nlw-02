@@ -8,3 +8,7 @@ export interface ISchedulesItems {
   from: string;
   to: string;
 }
+
+export interface ITotalConnections {
+  total: number;
+}
