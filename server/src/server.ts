@@ -4,6 +4,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 import routes from 'routes';
 import { errors } from 'celebrate';
+import cors from 'cors';
 
 import './containers';
 
@@ -16,6 +17,7 @@ databaseConnection();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use('/files', express.static(uploadConfig.tmpFolder));
 app.use(routes);
 app.use(errors());
