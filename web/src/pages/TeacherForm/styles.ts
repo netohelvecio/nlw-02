@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   background: ${props => props.theme.colors.white};
   width: 100%;
   max-width: 800px;

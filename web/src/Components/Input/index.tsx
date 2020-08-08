@@ -11,18 +11,28 @@ type IInputMask = InputHTMLAttributes<HTMLInputElement> & MaskedInputProps;
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   id: string;
+  error?: boolean;
+  register?: any;
 }
 
 interface IInputMaskProps extends IInputMask {
   label: string;
   id: string;
+  error?: boolean;
+  register?: any;
 }
 
-export const Input: React.FC<IInputProps> = ({ label, id, ...props }) => {
+export const Input: React.FC<IInputProps> = ({
+  label,
+  id,
+  register,
+  error,
+  ...props
+}) => {
   return (
-    <FieldContainer>
+    <FieldContainer error={error}>
       <label htmlFor={id}>{label}</label>
-      <input id={id} {...props} />
+      <input id={id} ref={register} {...props} />
     </FieldContainer>
   );
 };
@@ -30,12 +40,14 @@ export const Input: React.FC<IInputProps> = ({ label, id, ...props }) => {
 export const InputMask: React.FC<IInputMaskProps> = ({
   label,
   id,
+  register,
+  error,
   ...props
 }) => {
   return (
-    <FieldContainer>
+    <FieldContainer error={error}>
       <label htmlFor={id}>{label}</label>
-      <InputMaskStyled id={id} {...props} />
+      <InputMaskStyled id={id} ref={register} error={error} {...props} />
     </FieldContainer>
   );
 };
@@ -43,6 +55,8 @@ export const InputMask: React.FC<IInputMaskProps> = ({
 export const CurrencyInput: React.FC<IInputMaskProps> = ({
   label,
   id,
+  register,
+  error,
   ...props
 }) => {
   const currencyMask = createNumberMask({
@@ -50,9 +64,15 @@ export const CurrencyInput: React.FC<IInputMaskProps> = ({
   });
 
   return (
-    <FieldContainer>
+    <FieldContainer error={error}>
       <label htmlFor={id}>{label}</label>
-      <InputMaskStyled id={id} mask={currencyMask} {...props} />
+      <InputMaskStyled
+        id={id}
+        ref={register}
+        mask={currencyMask}
+        error={error}
+        {...props}
+      />
     </FieldContainer>
   );
 };

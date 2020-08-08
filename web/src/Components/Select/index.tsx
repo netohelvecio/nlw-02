@@ -8,13 +8,22 @@ interface IProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
   id: string;
   options: IOptions[];
+  register?: any;
+  error?: boolean;
 }
 
-const Select: React.FC<IProps> = ({ label, id, options, ...props }) => {
+const Select: React.FC<IProps> = ({
+  label,
+  id,
+  options,
+  register,
+  error,
+  ...props
+}) => {
   return (
-    <FieldContainer>
+    <FieldContainer error={error}>
       <label htmlFor={id}>{label}</label>
-      <select defaultValue="" id={id} {...props}>
+      <select defaultValue="" id={id} ref={register} {...props}>
         <option value="" disabled hidden>
           Selecione uma opção
         </option>

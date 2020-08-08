@@ -12,3 +12,16 @@ export interface ISchedulesItems {
 export interface ITotalConnections {
   total: number;
 }
+
+export interface IClassForm {
+  name: string;
+  bio: string;
+  whatsapp: string;
+  subject: string;
+  cost: number;
+  schedule: ISchedulesItems[];
+}
+
+export type FieldContainerProps = {
+  error: boolean | undefined;
+};

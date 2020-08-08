@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import MaskedInput from 'react-text-mask';
 
-export const FieldContainer = styled.div`
+import { FieldContainerProps } from '../../utils/types';
+
+export const FieldContainer = styled.div<FieldContainerProps>`
   position: relative;
 
   input[type='time']::-webkit-inner-spin-button,
@@ -36,7 +38,9 @@ export const FieldContainer = styled.div`
     margin-top: 0.8rem;
     border-radius: 0.8rem;
     background: ${props => props.theme.colors.inputBackgroundColor};
-    border: 1px solid ${props => props.theme.colors.lineWhite};
+    border: 1px solid
+      ${props =>
+        props.error ? props.theme.colors.error : props.theme.colors.lineWhite};
     padding: 0 1.6rem;
     font: 1.6rem ${props => props.theme.font.archivo};
   }
@@ -48,13 +52,15 @@ export const FieldContainer = styled.div`
   }
 `;
 
-export const InputMaskStyled = styled(MaskedInput)`
+export const InputMaskStyled = styled(MaskedInput)<FieldContainerProps>`
   width: 100%;
   height: 5.6rem;
   margin-top: 0.8rem;
   border-radius: 0.8rem;
   background: ${props => props.theme.colors.inputBackgroundColor};
-  border: 1px solid ${props => props.theme.colors.lineWhite};
+  border: 1px solid
+    ${props =>
+      props.error ? props.theme.colors.error : props.theme.colors.lineWhite};
   padding: 0 1.6rem;
   font: 1.6rem ${props => props.theme.font.archivo};
 `;
