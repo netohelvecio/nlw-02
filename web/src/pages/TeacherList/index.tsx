@@ -15,7 +15,7 @@ const TeacherList: React.FC = () => {
 
           <Input label="Dia da semana" id="week-day" type="text" />
 
-          <Input label="Hora" id="time" type="text" />
+          <Input label="Hora" id="time" type="time" />
         </Form>
       </Header>
 

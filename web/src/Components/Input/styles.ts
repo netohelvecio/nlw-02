@@ -3,6 +3,14 @@ import styled from 'styled-components';
 export const FieldContainer = styled.div`
   position: relative;
 
+  input[type='time']::-webkit-inner-spin-button,
+  input[type='time']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
   & + & {
     margin-top: 1.4rem;
   }
