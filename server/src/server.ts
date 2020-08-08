@@ -9,12 +9,14 @@ import './containers';
 
 import AppError from 'utils/errors/AppError';
 import databaseConnection from 'database';
+import uploadConfig from 'config/upload';
 
 databaseConnection();
 
 const app = express();
 
 app.use(express.json());
+app.use('/files', express.static(uploadConfig.tmpFolder));
 app.use(routes);
 app.use(errors());
 
