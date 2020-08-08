@@ -5,10 +5,12 @@ import 'express-async-errors';
 import routes from 'routes';
 import { errors } from 'celebrate';
 
-import './database/index';
 import './containers';
 
 import AppError from 'utils/errors/AppError';
+import databaseConnection from 'database';
+
+databaseConnection();
 
 const app = express();
 

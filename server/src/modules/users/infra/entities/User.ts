@@ -4,7 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+
+import Class from 'modules/classes/infra/entities/Class';
 
 @Entity('users')
 class User {

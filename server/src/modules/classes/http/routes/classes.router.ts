@@ -18,4 +18,16 @@ classesRouter.post(
   classesController.create,
 );
 
+classesRouter.get(
+  '/',
+  celebrate({
+    [Segments.QUERY]: {
+      week_day: Joi.number().min(0).max(7).required(),
+      subject: Joi.string().required(),
+      time: Joi.string().required(),
+    },
+  }),
+  classesController.index,
+);
+
 export default classesRouter;
