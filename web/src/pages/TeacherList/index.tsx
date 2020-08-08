@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../../Components/Header';
+import Input from '../../Components/Input';
 
 import { Container, Form, FieldContainer, Main } from './styles';
 import TeacherCard from '../../Components/TeacherCard';
@@ -10,20 +11,11 @@ const TeacherList: React.FC = () => {
     <Container>
       <Header title="Estes são os proffys disponíveis.">
         <Form>
-          <FieldContainer>
-            <label htmlFor="subject">Matéria</label>
-            <input type="text" id="subject" />
-          </FieldContainer>
+          <Input label="Matéria" id="subject" type="text" />
 
-          <FieldContainer>
-            <label htmlFor="week-day">Dia da semanda</label>
-            <input type="text" id="week-day" />
-          </FieldContainer>
+          <Input label="Dia da semana" id="week-day" type="text" />
 
-          <FieldContainer>
-            <label htmlFor="time">Hora</label>
-            <input type="text" id="time" />
-          </FieldContainer>
+          <Input label="Hora" id="time" type="text" />
         </Form>
       </Header>
 

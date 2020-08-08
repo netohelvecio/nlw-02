@@ -8,9 +8,10 @@ import { Container, HeaderContent } from './styles';
 
 interface IProps {
   title: string;
+  description?: string;
 }
 
-const Header: React.FC<IProps> = ({ title, children }) => {
+const Header: React.FC<IProps> = ({ title, description, children }) => {
   return (
     <Container>
       <div>
@@ -21,8 +22,9 @@ const Header: React.FC<IProps> = ({ title, children }) => {
         <img src={logo} alt="Proffy" />
       </div>
 
-      <HeaderContent>
+      <HeaderContent className="header-content">
         <strong>{title}</strong>
+        {description && <p>{description}</p>}
 
         {children}
       </HeaderContent>

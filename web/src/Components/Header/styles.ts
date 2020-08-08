@@ -54,13 +54,20 @@ export const HeaderContent = styled.div`
     color: ${props => props.theme.colors.white};
   }
 
+  p {
+    max-width: 30rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    align-self: flex-start;
+    margin-top: 1.6rem;
+  }
+
   @media (min-width: 700px) {
     max-width: 740px;
     margin: 0 auto;
     padding-bottom: 48px;
 
     display: flex;
-    flex: 1;
     flex-direction: column;
     align-items: flex-start;
 
