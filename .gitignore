@@ -4,6 +4,10 @@
 ### dotenv ###
 .env
 
+### tmp ###
+tmp/*
+!tmp/.gitkeep
+
 ### Node ###
 # Logs
 logs
