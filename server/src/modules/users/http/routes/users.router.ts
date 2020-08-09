@@ -16,10 +16,8 @@ usersRouter.post(
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
-      bio: Joi.string().required().max(255),
-      whatsapp: Joi.string()
-        .required()
-        .pattern(/^[0-9]+$/, 'numbers'),
+      bio: Joi.string().required(),
+      whatsapp: Joi.string().required(),
     },
   }),
   usersController.create,

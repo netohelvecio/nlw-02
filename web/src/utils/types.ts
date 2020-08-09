@@ -18,10 +18,32 @@ export interface IClassForm {
   bio: string;
   whatsapp: string;
   subject: string;
-  cost: number;
+  cost: string;
   schedule: ISchedulesItems[];
 }
 
 export type FieldContainerProps = {
   error: boolean | undefined;
 };
+
+export interface IUser {
+  id: string;
+  name: string;
+  whatsapp: string;
+  bio: string;
+}
+
+export interface IClass {
+  id: string;
+  subject: string;
+  cost: string;
+  user_id: string;
+}
+
+export interface IClassSchedule {
+  id: string;
+  week_day: number;
+  from: number;
+  to: number;
+  class_id: string;
+}
