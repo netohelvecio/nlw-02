@@ -47,3 +47,30 @@ export interface IClassSchedule {
   to: number;
   class_id: string;
 }
+
+export interface ITeacherList {
+  id: string;
+  week_day: number;
+  from: number;
+  to: number;
+  class_id: string;
+  class: {
+    id: string;
+    subject: string;
+    user_id: string;
+    cost: number;
+    user: {
+      id: string;
+      name: string;
+      avatar: string;
+      whatsapp: string;
+      bio: string;
+    };
+  };
+}
+
+export interface ISearchClassForm {
+  subject: string;
+  week_day: string;
+  time: string;
+}

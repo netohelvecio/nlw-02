@@ -1,35 +1,37 @@
 import React from 'react';
 
+import { ITeacherList } from '../../utils/types';
+import { formatPrice } from '../../utils/helpers';
+
 import whatsapp from '../../assets/images/icons/whatsapp.svg';
 
 import { Container, HeaderCard } from './styles';
 
-const TeacherCard: React.FC = () => {
+interface IProps {
+  teacherData: ITeacherList;
+}
+
+const TeacherCard: React.FC<IProps> = ({ teacherData }) => {
   return (
     <Container>
       <HeaderCard>
         <img
-          src="https://api.adorable.io/avatars/175/helvecio.png"
-          alt="Avatar"
+          src={`http://localhost:3333/files/${teacherData.class.user.avatar}`}
+          alt={teacherData.class.user.name}
         />
 
         <div>
-          <strong>Helvécio Neto</strong>
-          <span>Programação</span>
+          <strong>{teacherData.class.user.name}</strong>
+          <span>{teacherData.class.subject}</span>
         </div>
       </HeaderCard>
 
-      <p>
-        Entusiasta das melhores tecnologias de química avançada. Apaixonado por
-        explodir coisas em laboratório e por mudar a vida das pessoas através de
-        experiências. Mais de 200.000 pessoas já passaram por uma das minhas
-        explosões.
-      </p>
+      <p>{teacherData.class.user.bio}.</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 20,00</strong>
+          <strong>{formatPrice(teacherData.class.cost)}</strong>
         </p>
 
         <button type="button">

@@ -18,7 +18,7 @@ export const weekDayOptions: IOptions[] = [
   { value: '3', label: 'Quarta-Feira' },
   { value: '4', label: 'Quinta-Feira' },
   { value: '5', label: 'Sexta-Feira' },
-  { value: '6', label: 'Sábado-Feira' },
+  { value: '6', label: 'Sábado' },
 ];
 
 export const numberMask = [
@@ -51,3 +51,8 @@ export const defaultMaskOptions = {
   allowNegative: false,
   allowLeadingZeroes: false,
 };
+
+export const { format: formatPrice } = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});

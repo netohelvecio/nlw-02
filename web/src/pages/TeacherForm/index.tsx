@@ -75,7 +75,7 @@ const TeacherForm: React.FC = () => {
       setScheduleItem([{ week_day: null, from: '', to: '' }]);
       setLoading(false);
     } catch (err) {
-      console.log(err.response.data);
+      console.error(err.response.data);
       toast.error(err.response.data.message || 'Erro ao cadastrar professor.');
       setLoading(false);
     }
