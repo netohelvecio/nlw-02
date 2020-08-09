@@ -1,5 +1,6 @@
 import React from 'react';
 
+import api from '../../services/api';
 import { ITeacherList } from '../../utils/types';
 import { formatPrice } from '../../utils/helpers';
 
@@ -12,6 +13,10 @@ interface IProps {
 }
 
 const TeacherCard: React.FC<IProps> = ({ teacherData }) => {
+  function createNewConnection(user_id: string) {
+    api.post('connections', { user_id });
+  }
+
   return (
     <Container>
       <HeaderCard>
@@ -34,10 +39,17 @@ const TeacherCard: React.FC<IProps> = ({ teacherData }) => {
           <strong>{formatPrice(teacherData.class.cost)}</strong>
         </p>
 
-        <button type="button">
+        <a
+          onClick={() => createNewConnection(teacherData.class.user.id)}
+          href={`https://wa.me/${teacherData.class.user.whatsapp.replace(
+            /\D+/g,
+            '',
+          )}`}
+          target="_blank"
+        >
           <img src={whatsapp} alt="Entrar em contato" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </Container>
   );

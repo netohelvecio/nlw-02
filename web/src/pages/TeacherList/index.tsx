@@ -17,6 +17,7 @@ import { Container, Form, Main } from './styles';
 const TeacherList: React.FC = () => {
   const [teacherList, setTeacherList] = useState<ITeacherList[]>([]);
   const [loading, setLoading] = useState(false);
+  const [emptySearch, setEmptySearch] = useState(false);
   const { handleSubmit, register, errors } = useForm<ISearchClassForm>();
 
   async function onSubmit(data: ISearchClassForm) {
@@ -34,6 +35,10 @@ const TeacherList: React.FC = () => {
       })
       .then(response => {
         setTeacherList(response.data);
+
+        if (!response.data.length) {
+          setEmptySearch(true);
+        }
       })
       .catch(err => {
         console.error(err.response.data);
@@ -81,9 +86,17 @@ const TeacherList: React.FC = () => {
         {loading ? (
           <h2>Carregando...</h2>
         ) : (
-          teacherList.map(item => (
-            <TeacherCard key={item.id} teacherData={item} />
-          ))
+          <>
+            {teacherList.map(item => (
+              <TeacherCard key={item.id} teacherData={item} />
+            ))}
+
+            {!teacherList.length && emptySearch && (
+              <p>
+                Nenhum professor encontrado <br /> com sua pesquisa.
+              </p>
+            )}
+          </>
         )}
       </Main>
     </Container>

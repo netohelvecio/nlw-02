@@ -34,7 +34,7 @@ export const Container = styled.article`
       }
     }
 
-    button {
+    a {
       width: 20rem;
       height: 5.6rem;
       background: ${props => props.theme.colors.secondaryColor};

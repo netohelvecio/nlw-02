@@ -52,6 +52,12 @@ export const Main = styled.main`
     margin-top: 4rem;
   }
 
+  > p {
+    text-align: center;
+    margin-top: 4rem;
+    font: 700 2.4rem ${props => props.theme.font.archivo};
+  }
+
   @media (min-width: 700px) {
     max-width: 800px;
     margin: 0 auto;
